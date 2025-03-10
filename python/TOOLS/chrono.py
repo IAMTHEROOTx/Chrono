@@ -1,29 +1,22 @@
 import time
 
 print("WELCOME IN MINUTOR")
+print("IAMTHEROOTx made this script")
 
-sec = 0
-secint = 0
+#initialisation de variables
+sec_timer = 0
+sec_intervalle = 0
 
-print("Ok to start")
-go = (input('GO?: '))
-char = 'Ok'
-sec2 = 3
-while sec2 > 0:
-            print(sec2)
-            sec2 -= 1
-            time.sleep(1)#temps en secondes d'intervalles
+start = (input("You ready to start the minutor: "))
 
-while go == char:
-    if go == char:
-        sec = int(input('Enter a time in seconds: '))
-        secint = float(input('Enter an interval of seconds between each secondes: '))
-        print("MINUTOR ON") 
-        while sec > 0:
-            print(sec)
-            sec -= 1
-            time.sleep(secint)#temps en secondes d'intervalles 
-           
-        else:
-            print("You quit the MINUTOR")
-            break
+if start == "Yes" or "yes" or "YES":
+    sec_timer = int(input('Enter a time in seconds: '))
+    sec_intervalle = float(input('Enter an interval of seconds between each secondes: '))
+    print("MINUTOR ON") 
+    while sec_timer > 0:
+        print(f"Il vous manque {sec_timer} secondes.")
+        sec_timer -= 1
+        time.sleep(sec_intervalle)
+    print("The time is done!!!")
+else:
+    print("You quit the MINUTOR")
